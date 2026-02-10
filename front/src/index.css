@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Fondo principal (Midnight Grey) */
+  --color-aura-dark: #1c1c1e;
+
+  /* Tarjetas (Elevación sutil) */
+  --color-apple-card: #2c2c2e;
+
+  /* Colores de acento */
+  --color-aura-gold: #d4af37;
+  --color-aura-green: #30d158;
+
+  /* Tipografía Apple */
+  --color-apple-white: #f5f5f7;
+  --color-apple-grey: #86868b;
+}
+
+/* Reset básico para que el fondo ocupe todo y no centre cosas raras */
+body {
+  margin: 0;
+  background-color: var(--color-aura-dark);
+  color: var(--color-apple-white);
+  /* Fuente del sistema Apple */
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue',
+    Arial, sans-serif;
+  min-height: 100vh;
+  /* Quitamos el flex del body para que el layout fluya normal */
+  display: block;
+}
+
+/* Personalización de la scrollbar para que sea fina y tipo Apple */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
