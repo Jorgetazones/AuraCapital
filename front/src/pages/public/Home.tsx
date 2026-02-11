@@ -1,21 +1,22 @@
+import { Button } from './components/Button';
 import Card from './components/Card';
+import TextInput from './components/TextInput';
 
 export const Home = () => {
   return (
     <main className='container mx-auto px-4'>
-      {/* SECCIÓN 1: Header de la página */}
       <section className='py-12 border-b border-white/5'>
         <h1 className='text-4xl font-bold text-white'>Resumen de Cartera</h1>
         <p className='text-gray-400 mt-2'>
           Bienvenido de nuevo, Jorge. Así rinden tus activos hoy.
         </p>
+        <Button>Iniciar Sesión</Button>
+        <TextInput placeholder='Buscar activos...' className='mt-4' />
       </section>
 
-      {/* SECCIÓN 2: Dashboard (Grid de Cards) */}
       <section className='py-8'>
         <h2 className='sr-only'>Panel de Control</h2>
 
-        {/* El contenedor Grid: 1 columna en móvil, 2 en tablet, 3 en desktop */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           <Card title='Balance Total'>
             <p className='text-3xl font-bold'>$12,450.00</p>
