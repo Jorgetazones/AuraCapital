@@ -1,18 +1,20 @@
+import { cn } from '../../../lib/utils';
+
 interface CardProps {
   title?: string;
   children: React.ReactNode;
   className?: string;
 }
 
-const Card = ({ title, children, className = '' }: CardProps) => {
+const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div
-      className={`bg-white/5 border border-white/10 p-6 rounded-2xl shadow-xl backdrop-blur-sm ${className}`}
-    >
-      {title && (
-        <h3 className='text-gray-400 text-sm font-medium mb-4'>{title}</h3>
+      className={cn(
+        'bg-[#353535] border border-white/5 rounded-[2.5rem] p-8',
+        className
       )}
-      <div>{children}</div>
+    >
+      {children}
     </div>
   );
 };

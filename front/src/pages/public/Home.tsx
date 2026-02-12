@@ -39,6 +39,16 @@ export const Home = () => {
               </li>
             </ul>
           </Card>
+          <Card>
+            <h3 className='text-lg font-medium mb-4'>Añadir Activo</h3>
+            <div className='space-y-4'>
+              <TextInput label='Ticker' placeholder='BTC, ETH, AAPL...' />
+              <TextInput label='Cantidad' type='number' placeholder='0.00' />
+              <Button className='w-full mt-2' variant='outline'>
+                Añadir a la lista
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
     </main>

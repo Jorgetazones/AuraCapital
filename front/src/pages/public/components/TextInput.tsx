@@ -2,13 +2,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { cn } from '../../../lib/utils';
 const textInputVariants = cva(
-  'w-full rounded-md border border-white/10 bg-apple-card px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-aura-gold focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50',
+  'w-full rounded-xl border border-white/10 bg-[#1C1C1E] px-4 py-3 text-sm text-white transition-all placeholder:text-[#48484A] focus:outline-none focus:ring-1 focus:ring-aura-gold focus:border-aura-gold/50 disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: 'border-white/10 focus:border-aura-gold/50',
-        error: 'border-red-500 focus:ring-red-500 text-red-500',
-        success: 'border-green-500 focus:ring-green-500',
+        default: '',
+        error: 'border-red-500/50 focus:ring-red-500',
+        success: 'border-green-500/50 focus:ring-green-500',
       },
     },
     defaultVariants: {
