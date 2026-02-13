@@ -2,8 +2,13 @@ import { useState } from 'react';
 import { Button } from '../components/Button';
 import Card from '../components/Card';
 import TextInput from '../components/TextInput';
+import type { Transaction } from '../../../types/Transaction';
 
-const InvestingForm = () => {
+interface Props {
+  onSubmit?: (data: Transaction) => void;
+}
+
+const InvestingForm = ({ onSubmit }: Props) => {
   const [formData, setFormData] = useState({
     asset: '',
     amount: 0,
@@ -24,8 +29,23 @@ const InvestingForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Operación enviada a Aura Capital:', formData);
-  };
 
+    const newTransaction: Transaction = {
+      id: crypto.randomUUID(),
+      assetName: formData.asset,
+      amount: formData.amount,
+      price: formData.price,
+      commission: formData.commission,
+      type: 'IN',
+      date: new Date().toISOString(),
+      totalValue: formData.amount * formData.price + formData.commission,
+      portfolioId: 'port-1',
+    };
+
+    onSubmit?.(newTransaction);
+
+    setFormData({ asset: '', amount: 0, price: 0, tax: 0, commission: 0 });
+  };
   return (
     <Card className='max-w-2xl mx-auto p-10'>
       <form onSubmit={handleSubmit} className='space-y-6'>
